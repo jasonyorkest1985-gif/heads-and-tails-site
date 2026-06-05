@@ -11,14 +11,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --orange: #FF6B35;
-      --orange-light: #FF8C5A;
-      --orange-dark: #E5541F;
-      --navy: #1A1A2E;
-      --navy-light: #2A2A4E;
-      --navy-mid: #16213E;
+      --orange: #2d6a1f;
+      --orange-light: #3d8a2f;
+      --orange-dark: #1f4d16;
+      --navy: #1a2e1a;
+      --navy-light: #2a4e2a;
+      --navy-mid: #162e16;
       --white: #FFFFFF;
-      --cream: #FFF8F4;
+      --cream: #F4FFF4;
       --gray: #F5F5F5;
       --text: #2D2D2D;
       --text-light: #666;
@@ -111,7 +111,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 70% 40%, rgba(255,107,53,0.18) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 70% 40%, rgba(45,106,31,0.18) 0%, transparent 65%);
     }
 
     .hero-paws {
@@ -139,7 +139,7 @@
 
     .hero-badge {
       display: inline-block;
-      background: rgba(255,107,53,0.2);
+      background: rgba(45,106,31,0.2);
       border: 2px solid var(--orange);
       color: var(--orange);
       font-weight: 800;
@@ -206,7 +206,7 @@
     .btn-primary {
       background: var(--orange);
       color: var(--white);
-      box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+      box-shadow: 0 4px 15px rgba(45,106,31,0.4);
     }
 
     .btn-secondary {
@@ -314,7 +314,7 @@
       width: 56px;
       height: 56px;
       border-radius: 14px;
-      background: var(--card-color-bg, #FFF0EA);
+      background: var(--card-color-bg, #EAF0EA);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -339,7 +339,7 @@
     .service-card .price {
       display: inline-block;
       margin-top: 1rem;
-      background: var(--card-color-bg, #FFF0EA);
+      background: var(--card-color-bg, #EAF0EA);
       color: var(--card-color, var(--orange));
       font-weight: 800;
       font-size: 0.9rem;
@@ -379,7 +379,7 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.2rem;
-      box-shadow: 0 4px 15px rgba(255,107,53,0.35);
+      box-shadow: 0 4px 15px rgba(45,106,31,0.35);
     }
 
     .step-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
@@ -420,7 +420,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 60%, rgba(255,107,53,0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 30% 60%, rgba(45,106,31,0.15) 0%, transparent 60%);
     }
 
     .ai-booking-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
@@ -508,7 +508,7 @@
       align-items: center;
       justify-content: center;
       font-size: 7rem;
-      box-shadow: 0 15px 50px rgba(255,107,53,0.35);
+      box-shadow: 0 15px 50px rgba(45,106,31,0.35);
       position: relative;
     }
 
@@ -650,7 +650,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 30%, rgba(255,107,53,0.15) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 50% 30%, rgba(45,106,31,0.15) 0%, transparent 60%);
     }
 
     .map-card .map-emoji {
@@ -748,7 +748,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.6rem;
-      box-shadow: 0 6px 25px rgba(255,107,53,0.5);
+      box-shadow: 0 6px 25px rgba(45,106,31,0.5);
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
       animation: pulse-ring 2.5s infinite;
@@ -756,7 +756,7 @@
 
     .float-call:hover {
       transform: scale(1.1);
-      box-shadow: 0 10px 35px rgba(255,107,53,0.65);
+      box-shadow: 0 10px 35px rgba(45,106,31,0.65);
     }
 
     .float-call-label {
@@ -787,9 +787,9 @@
     }
 
     @keyframes pulse-ring {
-      0%   { box-shadow: 0 0 0 0 rgba(255,107,53,0.6); }
-      60%  { box-shadow: 0 0 0 16px rgba(255,107,53,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(45,106,31,0.6); }
+      60%  { box-shadow: 0 0 0 16px rgba(45,106,31,0); }
+      100% { box-shadow: 0 0 0 0 rgba(45,106,31,0); }
     }
 
     /* ── RESPONSIVE ── */
@@ -883,7 +883,7 @@
 
     <div class="services-grid">
 
-      <div class="service-card" style="--card-color:#FF6B35; --card-color-bg:#FFF0EA;">
+      <div class="service-card" style="--card-color:#2d6a1f; --card-color-bg:#EAF0EA;">
         <div class="service-icon">🛁</div>
         <h3>Full Groom</h3>
         <p>Bath, blow dry, haircut, nail trim, ear cleaning, and finishing spritz. Your dog walks out a whole new pup.</p>
