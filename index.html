@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heads &amp; Tails Grooming Salon | Rhome, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B35;
+      --orange-light: #FF8C5A;
+      --orange-dark: #E5541F;
+      --navy: #1A1A2E;
+      --navy-light: #2A2A4E;
+      --navy-mid: #16213E;
+      --white: #FFFFFF;
+      --cream: #FFF8F4;
+      --gray: #F5F5F5;
+      --text: #2D2D2D;
+      --text-light: #666;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo-text { font-family: 'Fredoka One', cursive; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 70px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo .paw { font-size: 2rem; }
+
+    .logo-text {
+      font-size: 1.5rem;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .logo-text span { color: var(--white); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--orange-dark) !important; color: var(--white) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: 70px;
+      min-height: calc(100vh - 70px);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(255,107,53,0.18) 0%, transparent 65%);
+    }
+
+    .hero-paws {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-paws span {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.06;
+      animation: drift 12s linear infinite;
+    }
+
+    @keyframes drift {
+      0%   { transform: translateY(110vh) rotate(0deg);   opacity: 0; }
+      10%  { opacity: 0.06; }
+      90%  { opacity: 0.06; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,107,53,0.2);
+      border: 2px solid var(--orange);
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 .accent { color: var(--orange); }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-dogs-only {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 800;
+      padding: 0.3rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-secondary:hover { border-color: var(--white); }
+
+    .hero-phone {
+      margin-top: 2.5rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+    .hero-phone a { color: var(--orange); font-weight: 700; text-decoration: none; }
+    .hero-phone a:hover { text-decoration: underline; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5rem 2rem; }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      font-weight: 600;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .tag-line {
+      display: inline-block;
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--orange);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .trust-item .icon { font-size: 1.4rem; }
+
+    /* ── SERVICES ── */
+    #services { background: var(--cream); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: var(--card-color, var(--orange));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--card-color-bg, #FFF0EA);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .service-card .price {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--card-color-bg, #FFF0EA);
+      color: var(--card-color, var(--orange));
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works { background: var(--white); }
+
+    .steps {
+      display: flex;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 200px;
+      max-width: 220px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-num {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 4px 15px rgba(255,107,53,0.35);
+    }
+
+    .step-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+    .step h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .steps-connector {
+      display: flex;
+      align-items: center;
+      padding-top: 35px;
+      color: var(--orange);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* ── AI BOOKING ── */
+    .ai-booking {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-booking::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(255,107,53,0.15) 0%, transparent 60%);
+    }
+
+    .ai-booking-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+    .ai-booking h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .ai-booking h2 span { color: var(--orange); }
+
+    .ai-booking p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .ai-phone-big {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--orange);
+      display: block;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .ai-phone-big:hover { color: var(--orange-light); }
+
+    .ai-note {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .ai-features {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .ai-feature {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 0.8rem 1.2rem;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-avatar {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7rem;
+      box-shadow: 0 15px 50px rgba(255,107,53,0.35);
+      position: relative;
+    }
+
+    .about-avatar::after {
+      content: '🐾';
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 2rem;
+      background: var(--white);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .about-content h2 {
+      font-size: 2.2rem;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-content .subtitle {
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    .about-content p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.75;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .about-badges {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .badge {
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── LOCATION ── */
+    #location { background: var(--white); }
+
+    .location-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .location-details h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .location-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .location-item .loc-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--cream);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .location-item .loc-info { flex: 1; }
+
+    .location-item .loc-label {
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      margin-bottom: 0.2rem;
+    }
+
+    .location-item .loc-value {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .location-item .loc-value a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .location-item .loc-value a:hover { color: var(--orange); }
+
+    .map-card {
+      background: var(--navy);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .map-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(255,107,53,0.15) 0%, transparent 60%);
+    }
+
+    .map-card .map-emoji {
+      font-size: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-card h4 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.3rem;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-card a {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-logo span { color: var(--white); }
+
+    footer p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--orange); }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 1.5rem 0;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.3) !important;
+      font-size: 0.8rem !important;
+    }
+
+    /* ── FLOATING CALL BUTTON ── */
+    .float-call {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      background: var(--orange);
+      color: var(--white);
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 25px rgba(255,107,53,0.5);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: pulse-ring 2.5s infinite;
+    }
+
+    .float-call:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(255,107,53,0.65);
+    }
+
+    .float-call-label {
+      position: fixed;
+      bottom: 3.2rem;
+      right: 6rem;
+      z-index: 999;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      pointer-events: none;
+    }
+
+    .float-call-label::after {
+      content: '';
+      position: absolute;
+      right: -7px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 7px solid transparent;
+      border-left-color: var(--navy);
+      border-right: none;
+    }
+
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(255,107,53,0.6); }
+      60%  { box-shadow: 0 0 0 16px rgba(255,107,53,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .about-badges { justify-content: center; }
+
+      .location-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .steps-connector { display: none; }
+
+      .float-call-label { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-bar { gap: 1.2rem; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="paw">🐾</span>
+      <div class="logo-text">Heads &amp; <span>Tails</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="tel:9726450604" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-paws" aria-hidden="true">
+      <span style="left:5%;  animation-delay:0s;   animation-duration:14s;">🐾</span>
+      <span style="left:18%; animation-delay:2s;   animation-duration:11s;">🐶</span>
+      <span style="left:32%; animation-delay:4s;   animation-duration:16s;">🐾</span>
+      <span style="left:48%; animation-delay:1s;   animation-duration:13s;">✂️</span>
+      <span style="left:63%; animation-delay:5.5s; animation-duration:10s;">🐾</span>
+      <span style="left:78%; animation-delay:3s;   animation-duration:15s;">🐶</span>
+      <span style="left:90%; animation-delay:7s;   animation-duration:12s;">🐾</span>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">✂️ Professional Dog Grooming · Rhome, TX</div>
+      <h1>Your Pup Deserves<br><span class="accent">the Best Look</span> in Town</h1>
+      <p class="hero-sub">Expert grooming by Angela Benton — where every dog leaves feeling fabulous</p>
+      <span class="hero-dogs-only">🐕 Dogs Only — No Cats!</span>
+      <div class="hero-buttons">
+        <a href="tel:9726450604" class="btn btn-primary">📞 Book an Appointment</a>
+        <a href="#services" class="btn btn-secondary">See Our Services</a>
+      </div>
+      <p class="hero-phone">
+        AI booking available 24/7 — call <a href="tel:9726450604">972-645-0604</a> anytime!
+      </p>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="icon">🐾</span> Dogs Only Salon</div>
+    <div class="trust-item"><span class="icon">🤖</span> AI Booking 24/7</div>
+    <div class="trust-item"><span class="icon">❤️</span> Fear-Free Approach</div>
+    <div class="trust-item"><span class="icon">✨</span> Premium Products</div>
+    <div class="trust-item"><span class="icon">📍</span> Rhome, TX</div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-header">
+      <span class="tag-line">What We Offer</span>
+      <h2>Our Grooming Services</h2>
+      <p>Tailored pampering for every pup — from a quick bath to a full spa day</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" style="--card-color:#FF6B35; --card-color-bg:#FFF0EA;">
+        <div class="service-icon">🛁</div>
+        <h3>Full Groom</h3>
+        <p>Bath, blow dry, haircut, nail trim, ear cleaning, and finishing spritz. Your dog walks out a whole new pup.</p>
+        <span class="price">Most Popular</span>
+      </div>
+
+      <div class="service-card" style="--card-color:#6B5EFF; --card-color-bg:#F0EEFF;">
+        <div class="service-icon">🚿</div>
+        <h3>Bath &amp; Brush</h3>
+        <p>Deep shampoo, conditioning treatment, blow dry, and thorough brushing to remove loose fur and tangles.</p>
+        <span class="price" style="background:#F0EEFF; color:#6B5EFF;">Great Value</span>
+      </div>
+
+      <div class="service-card" style="--card-color:#00B4A6; --card-color-bg:#E6F9F8;">
+        <div class="service-icon">✂️</div>
+        <h3>Breed-Style Trim</h3>
+        <p>Precision cuts styled to your breed's standard or your personal preference. Consistent results every time.</p>
+        <span class="price" style="background:#E6F9F8; color:#00B4A6;">Custom Cut</span>
+      </div>
+
+      <div class="service-card" style="--card-color:#F7A800; --card-color-bg:#FFF8E6;">
+        <div class="service-icon">💅</div>
+        <h3>Nail Trim &amp; Grind</h3>
+        <p>Clipped and smoothed nails to protect your floors and your pup's paws. Quick and stress-free.</p>
+        <span class="price" style="background:#FFF8E6; color:#F7A800;">Add-On Available</span>
+      </div>
+
+      <div class="service-card" style="--card-color:#E91E8C; --card-color-bg:#FEE8F4;">
+        <div class="service-icon">👂</div>
+        <h3>Ear Cleaning</h3>
+        <p>Gentle cleaning to remove wax and debris, helping prevent infections and keeping your pup comfortable.</p>
+        <span class="price" style="background:#FEE8F4; color:#E91E8C;">Preventive Care</span>
+      </div>
+
+      <div class="service-card" style="--card-color:#4CAF50; --card-color-bg:#EAF7EA;">
+        <div class="service-icon">🌸</div>
+        <h3>De-Shedding Treatment</h3>
+        <p>Specialized shampoo and deshedding technique that dramatically reduces loose fur — your furniture will thank you.</p>
+        <span class="price" style="background:#EAF7EA; color:#4CAF50;">Shedding Season</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="section-header">
+      <span class="tag-line">Simple Process</span>
+      <h2>How It Works</h2>
+      <p>Getting your pup booked and beautiful is easy as 1-2-3</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">📞</div>
+        <h3>Call or Book</h3>
+        <p>Call our AI booking line at <strong>972-645-0604</strong> any time — day or night — to schedule your appointment.</p>
+      </div>
+
+      <div class="steps-connector">→</div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">🐕</div>
+        <h3>Drop Off Your Pup</h3>
+        <p>Bring your furry friend to <strong>3535 E Hwy 114, Rhome TX</strong> at your scheduled time. We'll take it from there!</p>
+      </div>
+
+      <div class="steps-connector">→</div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">✨</div>
+        <h3>Pick Up &amp; Wow</h3>
+        <p>We'll call when your pup is ready. Pick up a freshly groomed, happy dog who's ready to show off.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AI BOOKING CALLOUT -->
+  <div class="ai-booking">
+    <div class="ai-booking-inner">
+      <h2>📱 Book Any Time — Our <span>AI Is Always On</span></h2>
+      <p>
+        Our smart booking assistant answers calls around the clock, so you never have to wait for business hours
+        to schedule your pup's next grooming session. Just call and let our AI handle the rest.
+      </p>
+      <a href="tel:9726450604" class="ai-phone-big">972-645-0604</a>
+      <p class="ai-note">⏰ AI Booking Line — Answers 24 Hours a Day, 7 Days a Week</p>
+      <div class="ai-features">
+        <div class="ai-feature">🌙 24/7 Availability</div>
+        <div class="ai-feature">📅 Instant Scheduling</div>
+        <div class="ai-feature">🔔 Reminders Sent</div>
+        <div class="ai-feature">✅ Easy Rescheduling</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-avatar">🧑‍🎨</div>
+      </div>
+      <div class="about-content">
+        <span class="tag-line">Meet the Groomer</span>
+        <h2>Angela Benton</h2>
+        <p class="subtitle">Owner &amp; Lead Dog Groomer</p>
+        <p>
+          Angela Benton brings passion, patience, and professional expertise to every dog that walks through the
+          door at Heads &amp; Tails. With years of hands-on grooming experience, she treats every pup like her own.
+        </p>
+        <p>
+          Angela built Heads &amp; Tails on the belief that grooming should be a positive, stress-free experience
+          for dogs and their owners alike. Her calm, gentle approach puts even the most anxious pups at ease,
+          and her attention to detail ensures every dog leaves looking and feeling their absolute best.
+        </p>
+        <p>
+          <strong>Dogs only.</strong> No cats — because Angela believes in doing one thing and doing it
+          exceptionally well.
+        </p>
+        <div class="about-badges">
+          <span class="badge">🐾 Dogs Only</span>
+          <span class="badge">✂️ Expert Groomer</span>
+          <span class="badge">❤️ Fear-Free</span>
+          <span class="badge">📍 Rhome, TX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="section-header">
+      <span class="tag-line">Find Us</span>
+      <h2>Visit the Salon</h2>
+      <p>Conveniently located right on Highway 114 in Rhome, Texas</p>
+    </div>
+
+    <div class="location-inner">
+      <div class="location-details">
+        <h3>Salon Info</h3>
+
+        <div class="location-item">
+          <div class="loc-icon">📍</div>
+          <div class="loc-info">
+            <div class="loc-label">Address</div>
+            <div class="loc-value">
+              <a href="https://maps.google.com/?q=3535+E+Hwy+114,+Rhome+TX+76078" target="_blank" rel="noopener">
+                3535 E Hwy 114<br>Rhome, TX 76078
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="loc-icon">📞</div>
+          <div class="loc-info">
+            <div class="loc-label">Salon Phone</div>
+            <div class="loc-value"><a href="tel:8175007230">817-500-7230</a></div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="loc-icon">🤖</div>
+          <div class="loc-info">
+            <div class="loc-label">AI Booking Line (24/7)</div>
+            <div class="loc-value"><a href="tel:9726450604">972-645-0604</a></div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="loc-icon">🐕</div>
+          <div class="loc-info">
+            <div class="loc-label">We Welcome</div>
+            <div class="loc-value">Dogs Only — No Cats</div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="loc-icon">✉️</div>
+          <div class="loc-info">
+            <div class="loc-label">Owner</div>
+            <div class="loc-value">Angela Benton</div>
+          </div>
+        </div>
+
+        <a href="https://maps.google.com/?q=3535+E+Hwy+114,+Rhome+TX+76078" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem; display:inline-flex;">
+          🗺️ Get Directions
+        </a>
+      </div>
+
+      <div class="map-card">
+        <div class="map-emoji">🗺️</div>
+        <h4>3535 E Hwy 114<br>Rhome, TX 76078</h4>
+        <p>Right on Highway 114 — easy to find, easy to get to.</p>
+        <a href="https://maps.google.com/?q=3535+E+Hwy+114,+Rhome+TX+76078" target="_blank" rel="noopener" class="btn btn-primary">
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Heads &amp; <span>Tails</span></div>
+    <p>Grooming Salon · 3535 E Hwy 114, Rhome, TX 76078</p>
+    <p>Owned &amp; operated by Angela Benton</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#location">Location</a>
+      <a href="tel:8175007230">817-500-7230</a>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-copy">&copy; 2025 Heads &amp; Tails Grooming Salon. All rights reserved. 🐾 Dogs Only.</p>
+  </footer>
+
+  <!-- FLOATING CALL BUTTON -->
+  <div class="float-call-label">Book Now — AI Answers 24/7</div>
+  <a href="tel:9726450604" class="float-call" title="Call to Book — AI answers 24/7" aria-label="Call to book an appointment">
+    📞
+  </a>
+
+</body>
+</html>
