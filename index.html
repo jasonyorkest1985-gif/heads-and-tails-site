@@ -347,6 +347,48 @@
       border-radius: 50px;
     }
 
+    @media (max-width: 767px) {
+      #services {
+        scroll-snap-type: y proximity;
+      }
+
+      .services-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .service-card {
+        width: 100%;
+        min-height: 75vh;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        scroll-snap-align: start;
+        scroll-margin-top: 70px;
+      }
+
+      .service-card:last-child {
+        margin-bottom: 0;
+      }
+
+      .service-card h3 {
+        font-size: 1.8rem;
+      }
+
+      .service-card p {
+        font-size: 1.1rem;
+      }
+
+      .service-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 3rem;
+      }
+    }
+
     /* ── HOW IT WORKS ── */
     #how-it-works { background: var(--white); }
 
